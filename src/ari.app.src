@@ -1,5 +1,5 @@
 {application, ari,
- [{description, "An OTP library"},
+ [{description, "Arweave Min Interface"},
   {vsn, "0.1.0"},
   {registered, []},
   {applications,
