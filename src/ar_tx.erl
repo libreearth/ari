@@ -102,7 +102,7 @@ sign_v1(TX, PrivKey, PubKey) ->
 
 sign(TX, PrivKey, PubKey, SignatureDataSegment) ->
 	NewTX = TX#tx{ owner = PubKey },
-	Sig = ar_wallet:sign(PrivKey, SignatureDataSegment),
+	Sig = ar_wallet:sign({PrivKey, PubKey}, SignatureDataSegment),
 	ID = crypto:hash(?HASH_ALG, <<Sig/binary>>),
 	NewTX#tx {
 		signature = Sig, id = ID
